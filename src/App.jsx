@@ -1,4 +1,6 @@
-import { Header } from "./components/Header";
+import React from 'react';
+
+import Header from "./components/Header";
 import Sidebar from "./components/Sidebar";
 
 import styles from "./styles/App.module.css";
