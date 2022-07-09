@@ -5,7 +5,7 @@ import Avatar from '../../Avatar';
 
 import styles from "./styles.module.css";
 
-function Comment() {
+function Comment({ content }) {
   return (
     <div className={styles.comment}>
       <Avatar hasBorder={false} src="https://github.com/murilorvargas.png" />
@@ -23,7 +23,7 @@ function Comment() {
             </button>
           </header>
 
-          <p>Muito bom Devon, parabéns!! 👏👏</p>
+          <p>{content}</p>
         </div>
 
         <footer className={styles.commentFooter}>
