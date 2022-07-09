@@ -24,6 +24,11 @@ function Post({ content, author, publishedAt }) {
     setNewCommentText(event.target.value)
   }
 
+  const deleteComment = (commentToDelete) => {
+    const commentsWithoutDeletedOne = comments.filter(comment => comment !== commentToDelete)
+    setComments(commentsWithoutDeletedOne)
+  };
+
   const handleCreateNewComment = () => {
     event.preventDefault()
     setComments([...comments, newCommentText])
@@ -74,7 +79,11 @@ function Post({ content, author, publishedAt }) {
 
       <div className={styles.commentList}>
         {comments.map(comment => (
-          <Comment key={comment} content={comment} />
+          <Comment 
+            key={comment}
+            content={comment}
+            onDeleteComment={deleteComment}
+          />
         ))}
       </div>
     </article>
